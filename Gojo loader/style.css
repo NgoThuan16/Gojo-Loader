@@ -1,0 +1,112 @@
+*, *::before, *::after{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.intro {
+	width: 90%;
+	max-width: 36rm;
+	padding-bottom: 1rem;
+	margin: 0 auto 1em;
+	padding-top: 0.5em;
+	font-size: calc(1em + 2vmin);
+	text-transform: capitalize;
+	border-bottom: 1px dashed rgb(0, 0, 0, 0.3);
+	text-align: center;
+	font-family: Arial;
+}
+
+.box {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-start;
+	justify-content: center;
+	align-items: center;
+	background-color: #e6dcdc
+}
+
+.gojo {
+	position: relative;
+	width: 100%;
+	max-width: 20em;
+	overflow: hidden;
+	background-color: #e6dcdc
+}
+
+.gojo::before {
+	content: '';
+	display: flex;
+	padding-bottom: 100%;
+}
+
+.gojo::hover > *{
+	animation-play-state: paused;
+}
+
+.gojo::active >*{
+	animation-play-state: running;
+}
+
+.gojo_body, .gojo_tail, .gojo_head {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	animation: rotate 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+}
+
+.gojo_body::before, .gojo_tail::before, .gojo_head::before {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background-size: 200%;
+	background-repeat: no-repeat;
+	background-image: url("image/image.png");
+}
+
+.gojo_head::before {
+	top: 0;
+	right: 0;
+	background-position: 100% 0%;
+	transform-origin: 0% 100%;
+	transform: rotate(90deg);
+}
+
+.gojo_tail {
+	animation-delay: 0.2s;
+}
+
+.gojo_tail::before {
+	left: 0;
+	bottom: 0;
+	background-position: 0% 100%;
+	transform-origin: 100% 0%;
+	transform: rotate(-30deg);
+}
+
+
+
+@keyframes rotate {
+	from {
+		transform: rotate(720deg);
+	}
+	to {
+		transform: none;
+	}
+}
