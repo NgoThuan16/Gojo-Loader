@@ -77,7 +77,7 @@ body {
 	height: 50%;
 	background-size: 200%;
 	background-repeat: no-repeat;
-	background-image: url("image/image.png");
+	background-image: url("image.png");
 }
 
 .gojo_head::before {
